@@ -74,6 +74,7 @@ void LinkedListAlfabetica::insere(Nodo * e){
                     aux->prev->next = e;
                     e->prev = aux->prev;
                     e->next = aux;
+                    aux->prev = e;
                     return;
                 }
 
