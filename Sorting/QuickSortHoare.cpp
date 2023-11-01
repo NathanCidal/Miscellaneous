@@ -5,9 +5,9 @@ void QuickSort(int * v, int start, int end){
     int j = end;
     int pivot = v[(i+j)/2];
     while(i <= j){
-        if(v[i] < pivot){ 
+        while(v[i] < pivot){ 
             i++; }
-        if(v[j] > pivot){ 
+        while(v[j] > pivot){ 
             j--; }
         if(i <= j){
             int aux = v[i];
