@@ -70,21 +70,31 @@ class EWGraph{
             vertices.insert(v);
             vertices.insert(w);
             this->e++;
-            
         }
 
         vector<Edge> adj(string v){     //Return the Adjecents of Vertice V
             return graph[v];
         }
 
-        set<string> edges(){                //Return all edges
+        vector<Edge> all_Edges(){
+            vector<Edge> allEdges;
+            for (auto const& v : edgesV()) {
+                for(auto const &w : adj(v)){
+                    allEdges.push_back(w);
+                }
+            }
+            return allEdges;
+        }
+
+        set<string> edgesV(){                //Return all edges
             return vertices;
         }
+        
 
         string toString(){                  //Convert to a String
             stringstream ss;
             ss << V() << " vertices, " << E() << " edges\n";
-            for(auto const & vAux :edges()){             //Run through all Vertices
+            for(auto const & vAux :edgesV()){             //Run through all Vertices
                 ss << vAux << ": ";
                 for(auto const & wAux: adj(vAux)){          //Run through all Adjacents of the Vertice vAux
                     ss << wAux << " ";  

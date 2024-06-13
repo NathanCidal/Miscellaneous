@@ -34,7 +34,10 @@ class Edge{
         string w;               //Other  (Other vertex)
         double weightEdge;      //Weight that will be used on MST
     public:
-        Edge(string dv, string dw, double dweight):v(v), w(w), weightEdge(dweight){};   //Constructor
+        Edge(string dv, string dw, double dweight){
+            v = dv; w = dw;
+            weightEdge = dweight;
+        }
 
         string either(){ return this->v;      }     //Getter for V
 
